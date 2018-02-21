@@ -1,29 +1,30 @@
 function setup() {
   createCanvas(600, 400);
-  car = new Car(100, 75);
-  print(car.x, car.y);
+  car1 = new Car(25, 25);
+  car2 = new Car(25, 125);
 }
 
 
 function draw(){
   background(200);
-  car.show();
-  car.acc();
+  car1.show();
+  car1.acc(5);
+  car2.show();
+  car2.acc(2);
   /*acc();
   dec();
   turn();*/
 }
-
-
 class Car {
-  constructor(height, width) {
-    this.height=height;
-    this.width=width;
-    this.x=25;
-    this.y=25;
+  constructor(x,y,v) {
+    this.height=30;
+    this.width=10;
+    this.x=x;
+    this.y=y;
 }
-  acc(){
-    car.x=car.x+5
+  acc(v){
+    this.v=v;
+    this.x=this.x+this.v;
   }
   dec(){
   }
@@ -31,6 +32,6 @@ class Car {
   }
   show() {
     stroke(255);
-    rect(car.x, car.y, car.height, car.width,);
+    rect(this.x, this.y, this.height, this.width,);
 }
 }
