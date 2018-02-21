@@ -1,15 +1,36 @@
+function setup() {
+  createCanvas(600, 400);
+  car = new Car(100, 75);
+  print(car.x, car.y);
+}
+
+
+function draw(){
+  background(200);
+  car.show();
+  car.acc();
+  /*acc();
+  dec();
+  turn();*/
+}
+
+
 class Car {
-	constructor(height, width) {
-    this.height = height;
-    this.width = width;
-    }
-	acc() {
-	
+  constructor(height, width) {
+    this.height=height;
+    this.width=width;
+    this.x=25;
+    this.y=25;
 }
-	dec(){
-	
-}
-	turn(){
-	
+  acc(){
+    car.x=car.x+5
+  }
+  dec(){
+  }
+  turn(){
+  }
+  show() {
+    stroke(255);
+    rect(car.x, car.y, car.height, car.width,);
 }
 }
